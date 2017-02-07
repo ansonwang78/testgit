@@ -1,0 +1,1718 @@
+   QB/CU 
+中国联通公司企业标准
+QB/CU X13-ABC（DEFG）
+
+
+
+
+中国联通统一资源库模型规范
+公共附录分册
+China Unicom Model Specification of unified Resource Base
+
+
+20xx- xx -xx发布
+20xx- xx -xx实施
+中国联通公司   发布
+ 
+目  次
+目  次	I
+前  言	IV
+中国联通统一资源库模型规范	5
+1 范围	5
+2 规范性引用文件	5
+3 缩略语	5
+4 统一资源库概述	9
+4.1 概述	9
+5 统一资源库数据模型	9
+5.1 公共资源	9
+5.1.1 专业	9
+5.1.2 资源规格	9
+5.1.3 属性规格	10
+5.1.4 设备类型	10
+5.1.5 设备型号	11
+5.1.6 机架类型	11
+5.1.7 机架型号	11
+5.1.8 机框类型	12
+5.1.9 机框型号	12
+5.1.10 机槽类型	13
+5.1.11 板卡类型	13
+5.1.12 板卡型号	13
+5.1.13 模块类型	14
+5.1.14 模块型号	14
+5.1.15 端子类型	14
+5.1.16 端口光电类型	14
+5.1.17 端口电气特性	15
+5.1.18 工程	15
+5.1.19 工程关联资源	17
+5.1.20 单位	17
+5.1.21 客户	17
+5.1.22 生产厂家	19
+5.1.23 机历卡	19
+5.1.24 机历卡内容	20
+5.1.25 员工	21
+5.1.26 资产目录	22
+5.1.27 固定资产	22
+5.1.28 资源资产关系	23
+附　录　A （规范性附录） 枚举值说明	24
+A.1 专业	24
+A.2 长本属性	24
+A.3 产权性质	25
+A.4 产权归属	25
+A.5 资源来源	25
+A.6 维护状态	25
+A.7 业务状态	26
+A.8 资源生命周期	26
+A.9 设计用途	26
+A.10 业务用途	26
+A.11 电路级别	27
+A.12 电路速率	27
+A.13 传输电路业务类型	30
+A.14 系统类型	36
+A.15 所属网络	36
+A.16 运行状态	36
+A.17 维护方式	37
+A.18 运营商	37
+A.19 接口类型	43
+A.20 电路要求	44
+A.21 端口速率	44
+A.22 机房等级机房类型关系说明	47
+A.23 光纤光路业务类型	48
+
+ 
+前  言
+为了支撑智能监控需求以及省分系统接口需求，联通以生产环节中各职能岗位的操作要求为梳理OSS服务能力的标准，建立联通统一资源库，进而提升中国联通OSS系统面向集约化运维、一体化响应支撑、端到端业务质量管理的支撑能力。
+中国联通统一资源库正在逐步的规划和建设，需要制定《中国联通统一资源库模型规范V1.0》，从实际运维需求出发，明确统一资源库基础支撑数据，提高数据共享的效率及准确性，为运维管理工作的开展提供可靠数据支撑。
+
+
+
+
+
+
+
+
+本规范由中国联合网络通信有限公司网络运维部提出。
+本规范由中国联合网络通信有限公司技术部归口。
+本部分起草单位：中国联合网络通信有限公司、北京邮电大学。
+本规范主要起草人：。
+本规范的修改和解释权属中国联合网络通信有限公司。 
+中国联通统一资源库模型规范
+1　范围
+本标准规定了中国联通统一资源库的数据模型。
+本规范适用于统一资源库的规划、设计和实施。
+2　规范性引用文件
+下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件，仅所注日期的版本适用于本文件。凡是不注日期的引用文件，其最新版本（包括所有的修改单）适用于本文件。
+3　缩略语
+缩略语	英文	中文
+AC	Access Controller	接入控制器
+ADSL	Asymmetric Digital Subscriber Line	非对称数字用户线
+AP	Access Point	接入点
+ATM	Asynchronous Transfer Mode	异步传输模式
+BAS	Broadband Access Router	宽带接入服务器
+BGCF	Breakout Gateway Control Function	边界出口网关控制功能
+BHCA	Busy Hour Call Attempt	忙时呼叫处理能力
+BHSA	Busy Hour Session Attempts	忙时会话处理能力
+BRAS	Broadband Remote Access Server	宽带远程接入服务器
+BSC	Base Station Controller	基站控制器
+BTS	Base Transceiver Station	基站收发台
+CCA	Credit Control Answer	信用控制应答
+CCR	Credit Control Request	信用控制请求
+CDF	Charging Data Function	计费数据功能
+CE	Customer Edge	客户边缘设备
+CGF	Charging Gateway Function	计费网关功能
+CIR	Committed Information Rate	承诺信息速率
+DDF	Digital Distribution Frame	数字配线架
+DDN	Digital Data Network	数字数据网
+DLCI	Data Link Connection Identifier	数据链路连接标识
+DN	Distinguished Name	识别名
+DRA	Diameter Routing Agent	Diameter信令路由代理
+DSLAM	Digital Subscriber Line Access Multiplexer	数字用户线路接入复用器
+EDF	Ethernet Distribution Frame	网线配线架
+EMS	Element Management System	网元管理系统
+EPON	Ethernet Passive Optical Network	以太网无源光网络
+FQDN	Fully Qualified Domain Name	全域名
+FR	Frame Trunk	帧中继
+FTTH	Fiber to The Home	光纤到户
+GGSN	Gateway GPRS Support Node	网关GPRS支持节点
+GMSC	Gateway Mobile Switching Center	移动交换中心网关
+GMSS	GMSC Server	移动交换中心网关服务器
+GPON	Gigabit-Capable Passive Optical Network	吉比特无源光网络
+GPS	Global Positioning System	全球定位系统
+GSM	Global System of Mobile communication	全球移动通讯系统
+GT	Global Title	全局码
+HLR	Home Location Register	归属位置寄存器
+HSS	Home Subscriber Sever	归属用户服务器
+IBCF	Interconnection Border Control Function	边界控制功能
+ID	IDentity	标识符
+IDC	Internet Data Center	互联网数据中心
+IDR	Intermediate Data Rate	中等数据速率
+IGW	Integrated GateWay	综合网关
+IMS	IP Multimedia Subsystem	IP多媒体子系统
+IMSI	International Mobile Subscriber Identity  	国际移动用户识别码
+IP	Internet Protocol	因特网协议
+IPRAN	IP Radio Access Network	无线接入网IP化
+ISUP	ISDN User Part	ISDN用户部分
+IT	Information Technology	信息技术
+ITMC	International Transmission Maintenance Center	国际传输维护中心
+LAC	Location Area Code	位置区码
+LAN	Local Area Network	局域网
+LOID	Logic Identity	逻辑认证
+LTE	Long Term Evolution	长期演进
+MAC	Media Access Control	多媒体接入控制
+MBMS	MultiMedia Broadcast/Multicast Service	多媒体广播和多播服务
+MCC	Mobile Country Code	移动国家码
+MDF	Main Distribution Frame	总配线架
+MGCF	Media Gateway Control Function	媒体网关控制功能
+MGW	Media GateWay	媒体网关
+MME	Mobility Management Entity	移动性管理实体
+MPLS	Medium Resource Function Controller	多媒体资源功能控制器
+MRFC	Medium Resource Function Processor 	多媒体资源功能处理器
+MRFP		
+MSAN	Multi-Service Access Node	多业务接入点
+MSC 	Mobile Switching Center	移动交换中心
+MSP	Multiplex Section Protection	复用段保护
+NGN	Next Generation Network	下一代网络
+OCS	Online Charging System	在线计费系统
+ODF	Optical Distribution Frame	光纤配线架
+OLT	Optical Line Terminal	光缆终端设备
+ONU	Optical Network Unit	光网络单元
+OSA_SCS	Open Service Architecture Service Capability Serve	业务能力服务器
+OSS	Operation Support System	运维支撑系统
+PCRF	Policy and Charging Rules Function	策略和计费规则功能
+PCU	Package Control Unit	分组控制单元
+PDCH	Packet Data Channel	分组数据信道
+PDH	Plesiochronous Digital Hierarchy	准同步数字系列
+PDP	Packet Data Protocol	分组数据协议
+PE	Provider Edge	服务提供商边缘设备
+PGW	Packte Data Network-GateWay	分组数据网网关
+PLMN	Public land mobile network 
+公众陆地移动网
+PON	Passive Optical Network	无源光网络
+POP	Point Of Presence	网络服务提供点
+PSTN	Public Switched Telephone Network	公共交换电话网
+RAA	Re-Auth Answer	重新认证/授权应答
+RAR	Re-Auth Request	重新认证/授权请求
+RD	Route Distinguisher	路由标识符
+RNC	Radio Network Controller	无线网络控制器
+RRU	Radio Remote Unit	远端射频单元
+RT	Route Target	路由目标
+SAU	Signal Access Point	信令接入单元
+SBC	Session Border Controller	会话边界控制
+SCP	Service Control Point	业务控制点
+SCU	Service Control Unit	业务控制单元
+SDH	Synchronous Digital Hierarchy	同步数字系列
+SDP	Service Data Point	业务数据点
+ServingGW	Serving Gateway	服务网关
+SGSN	Service GPRS Support Node	服务GPRS支持节点
+SGW	Signal Gateway	信令网关
+SIP	Session Initiation Protocol	初始会话协议
+SLA	Service Level Agreement	服务级别协议
+SLC	Signaling Link Code	信令链路编码
+SLF	Subscription Locator Function	签约定位器功能
+SMAP	Service Management Access Point	业务管理接入点
+SMP	Service Management Point	业务管理点
+SNCP	Sub-network Connection Protection	子网连接保护
+SNMP	Simple Network Management Protocol	简单网络管理协议
+SPDF	Service_based Policy Decision Function	媒体流策略决策功能
+SPR	Subscription Profile Repository	用户签约寄存器
+TRGW	Translation Gateway	翻译网关
+UE	User Equipment	用户设备
+UPS	Uninterruptible Power System	不间断电源系统
+URL	Uniform Resource Locator	统一资源定位符
+VC	Virtual Channel	虚通路
+VCI	Virtual Channel Identifier	虚通路标识
+VDF	Video Distribution Frame	音频配线架
+VDSL	Very-high-bit-rate Digital Subscriber loop	甚高频数字用户环路
+VIG	Video Interworking Gateway	视频互通网关
+VLAN	Virtual Local Area Network	虚拟局域网
+VLR	Visitor Location Register	拜访位置寄存器
+VP	Virtual Path	虚通道
+VPI	Virtual Path Identifier	虚通道标识
+VPN	Virtual Private Network	虚拟专用网
+VRF	VPN Routing and Forwarding	VPN路由转发表
+VSAT	Very Small Aperture Terminal	甚小口径天线地球站
+WCDMA	Wideband Code Division Multiple Access	宽带码分多址
+WDM	Wavelength-division multiplexing	波分复用
+WLAN	Wireless Local Area Network	无线局域网
+4　统一资源库概述
+4.1　概述
+为了支撑智能监控需求以及省分系统接口需求，联通以生产环节中各职能岗位的操作要求为梳理OSS服务能力的标准，建立联通统一资源库，进而提升中国联通OSS系统面向集约化运维、一体化响应支撑、端到端业务质量管理的支撑能力。
+统一资源库模型主要规范的数据资源包括：公共资源、空间资源、机房物理设备资源、管线资源、光缆网、电缆网、传输网、同步网、数据网、移动无线网、移动核心网、智能网、接入网、交换网、IMS、动力环境资源、码号资源、卫星网、增值业务资源、IT专业、社区资源、备品配件及仪器仪表、应急通信资源、国际资源等。
+5　统一资源库数据模型
+5.1　公共资源
+5.1.1　专业
+主表：PUB_SPECIALITY，该表数据由集团统一提供，以供其他表引用。
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_SPECIALITY	SPECIALITY_ID	专业类型ID	关键字ID。该ID全网唯一，如需新增专业请向联通集团申请，由集团统一分配	NUMBER(8)	M
+PUB_SPECIALITY	SPECIALITY	专业类型名	专业类型名称	VARCHAR2(40)	M
+PUB_SPECIALITY	SUPER_SPECIALITY_ID	上级专业ID	所属上级专业ID。如本专业存在上级专业请在此属性填写上级专业的SPECIALITY_ID值，以实现上下级专业的关联	NUMBER(8)	O
+5.1.2　资源规格
+主表：PUB_RES_TYPE，该表数据由集团统一提供，以供其它表引用。
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_RES_TYPE	RES_TYPE_ID	资源对象类型ID	关键字ID，该ID全网唯一，如需新增请资源规格向联通集团申请，由集团统一分配	NUMBER(8)	M
+PUB_RES_TYPE	RES_TYPE	资源对象名称	资源规格名称	VARCHAR2(40)	M
+PUB_RES_TYPE	ISRESOURCE	是否资源对象类型	是否资源规格类型，字典取值，DEFAULT '1',
+0-抽象对象，
+1-实体对象，
+2-系统定义查询对象，
+3-自定义查询对象，
+4-专业类型对象
+5 SQL配置的查询	CHAR(1)	M
+PUB_RES_TYPE	INHERIT_RES_TYPE_ID	继承父对象ID，父类	父资源规格ID，如本规格存在上级规格请在此属性填写上级专业的RES_TYPE_ID值，以实现资源规格的继承关联	NUMBER(8)	O
+5.1.3　属性规格
+主表：PUB_PROPERTY_SPEC，该表数据由集团统一提供，新增需要申请。
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_PROPERTY_SPEC	PROP_SPEC_ID	属性规格ID	该规格ID需要统一向集团申请。	NUMBER(8)	M
+PUB_PROPERTY_SPEC	NAME	名称		VARCHAR2(255)	M
+PUB_PROPERTY_SPEC	NO	编码		VARCHAR2(255)	O
+5.1.4　设备类型
+主表：RME_EQP_TYPE，该表数据由集团统一提供，以供设备资源表引用。
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_EQP_TYPE	EQP_TYPE_ID	设备类型ID	关键字ID，系统新增设备类型请向集团申请ID，由集团统一分配	NUMBER(8)	M
+RME_EQP_TYPE	EQP_TYPE	设备类型	设备类型名称	VARCHAR2(40)	M
+RME_EQP_TYPE	RES_TYPE_ID	资源规格ID	该设备类型所属资源规格ID，引用PUB_RES_TYPE表的RES_TYPE_ID字段	NUMBER(8)	M
+5.1.5　设备型号
+主表：RME_EQP_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_EQP_MODEL	EQP_MODEL_ID	设备型号ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_EQP_MODEL	EQP_MODEL	设备型号	设备型号	VARCHAR2(40)	M
+RME_EQP_MODEL	EQP_TYPE_ID	设备类型ID	设备类型ID，引用RME_EQP_TYPE表EQP_TYPE_ID字段	NUMBER(8)	M
+RME_EQP_MODEL	MFR_ID	生产厂家ID	生产厂家ID，引用PUB_MFR表MFR_ID字段	NUMBER(8)	M
+RME_EQP_MODEL	DEPTH	深度	型号深度，单位MM	NUMBER(8,2)	O
+RME_EQP_MODEL	HEIGHT	高度	型号高度，单位MM	NUMBER(8,2)	O
+RME_EQP_MODEL	WIDTH	宽度	型号宽度，单位MM	NUMBER(8,2)	O
+5.1.6　机架类型
+主表：RME_RACK_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_RACK_TYPE	RACK_TYPE_ID	机架类型ID	关键字ID，如需新增机架类型请向集团申请ID，由集团统一分配	NUMBER(8)	M
+RME_RACK_TYPE	RACK_TYPE	机架类型	机架类型名，如ODF架、DDF架、MODF架、设备架等	VARCHAR2(40)	M
+5.1.7　机架型号
+主表：RME_RACK_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_RACK_MODEL	RACK_MODEL_ID	机架型号ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_RACK_MODEL	RACK_MODEL	机架型号	机架型号名称	VARCHAR2(40)	M
+RME_RACK_MODEL	HEIGHT	机架高度	该型号机架的高度，单位mm	NUMBER(8,2)	O
+RME_RACK_MODEL	WIDTH	机架宽度	该型号机架的宽度，单位mm	NUMBER(8,2)	O
+RME_RACK_MODEL	THICK	深度	该型号机架的深度，单位mm	NUMBER(8,2)	O
+RME_RACK_MODEL	RACK_WEIGHT	机架重量	该型号机架的重量，单位kg	NUMBER(8,2)	O
+RME_RACK_MODEL	RACK_TYPE_ID	机架类型ID	机架类型ID，引用RME_RACK_TYPE表RACK_TYPE_ID字段	NUMBER(8)	M
+RME_RACK_MODEL	SHELF_NUM	可容纳机框数	该型号机架的可容纳机框数	NUMBER(4)	O
+RME_RACK_MODEL	MFR_ID	生产厂家ID	生产厂家ID，引用PUB_MFR表MFR_ID字段	NUMBER(8)	M
+5.1.8　机框类型
+主表：RME_SHELF_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_SHELF_TYPE	shelf_type_ID	机框类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_SHELF_TYPE	shelf_type	机框类型	机框类型名	VARCHAR2(40)	M
+5.1.9　机框型号
+主表：RME_SHELF_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_SHELF_MODEL	SHELF_MODEL_ID	机框型号ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_SHELF_MODEL	SHELF_MODEL	机框型号	机框型号名称	VARCHAR2(40)	M
+RME_SHELF_MODEL	HEIGHT	机框高度	该型号机框的高度，单位mm	NUMBER(8,2)	O
+RME_SHELF_MODEL	WIDTH	机框宽度	该型号机框的宽度，单位mm	NUMBER(8,2)	O
+RME_SHELF_MODEL	DEPTH	机框深度	该型号机框的深度，单位mm	NUMBER(8)	O
+RME_SHELF_MODEL	SHELF_TYPE_ID	机框类型ID	机框类型ID，引用RME_SHELF_TYPE表SHELF_TYPE_ID字段	NUMBER(4)	M
+RME_SHELF_MODEL	MFR_ID	生产厂家	生产厂家ID，引用PUB_MFR表MFR_ID字段	NUMBER(8)	M
+5.1.10　机槽类型
+机槽类型也叫插槽类型，主表：RME_SLOT_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_SLOT_TYPE	SLOT_TYPE_ID	插槽类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_SLOT_TYPE	SLOT_TYPE	插槽类型	机槽类型名称	VARCHAR2(40)	M
+RME_SLOT_TYPE	HEIGHT	插槽高度	机槽类型高度，单位MM	NUMBER(8,2)	O
+RME_SLOT_TYPE	WIDTH	插槽宽度	机槽类型宽度，单位MM	NUMBER(8,2)	O
+5.1.11　板卡类型
+主表：RME_CARD_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_CARD_TYPE	CARD_TYPE_ID	机盘类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_CARD_TYPE	CARD_TYPE	机盘类型	机盘类型名称	VARCHAR2(40)	M
+RME_CARD_TYPE	FUNC_DESC	功能描述	机盘功能描述	VARCHAR2(80)	O
+5.1.12　板卡型号
+板卡又名机盘，主表：RME_CARD_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_CARD_MODEL	CARD_MODEL_ID	机盘型号ID	关键字键ID，该ID系统自动维护	NUMBER(8)	M
+RME_CARD_MODEL	CARD_MODEL	机盘型号	机盘型号名称	VARCHAR2(40)	M
+RME_CARD_MODEL	CARD_TYPE_ID	机盘类型ID	机盘类型ID，引用RME_CARD_TYPE表CARD_TYPE_ID字段	NUMBER(8)	M
+RME_CARD_MODEL	PORT_NUM	端口数量	该型号板卡的端口数量	NUMBER(4)	M
+RME_CARD_MODEL	MFR_ID	生产厂家ID	生产厂家ID，引用PUB_MFR表MFR_ID字段	NUMBER(8)	M
+5.1.13　模块类型
+主表：RME_MODULE_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_MODULE_TYPE	MODULE_TYPE_ID	模块类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_MODULE_TYPE	MODULE_TYPE	模块类型	模块类型名称	VARCHAR2(40)	M
+5.1.14　模块型号
+主表：RME_MODULE_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_MODULE_MODEL	MODULE_MODEL_ID	模块型号ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_MODULE_MODEL	MODULE_MODEL	模块型号	模块型号名称	VARCHAR2(40)	M
+RME_MODULE_MODEL	MODULE_TYPE_ID	模块类型ID	模块类型ID,引用RME_MODULE_TYPE表字段MODULE_TYPE_ID	NUMBER(8)	M
+RME_MODULE_MODEL	TOTAL_ROW	端子总行数	该型号模块的端子总行数	NUMBER(3)	M
+RME_MODULE_MODEL	TOTAL_COL	端子总列数	该型号模块的端子总列数	NUMBER(3)	M
+RME_MODULE_MODEL	TERM_TYPE_ID	端子类型ID	端子类型ID,引用RME_TERM_TYPE表字段TERM_TYPE_ID	NUMBER(8)	M
+5.1.15　端子类型
+主表：RME_TERM_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_TERM_TYPE	TERM_TYPE_ID	端子类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_TERM_TYPE	TERM_TYPE	端子类型	端子类型名称	VARCHAR2(40)	M
+5.1.16　端口光电类型
+主表：RME_PORT_TYPE
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_PORT_TYPE	PORT_TYPE_ID	端口类型ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_PORT_TYPE	PORT_TYPE	端口类型	端口类型名称	VARCHAR2(40)	M
+5.1.17　端口电气特性
+主表：RME_PORT_MODEL
+表名	英文名称	属性名称	说明	数据类型	限定
+RME_PORT_MODEL	PORT_MODEL_ID	端口电气特性ID	关键字ID，该ID系统自动维护	NUMBER(8)	M
+RME_PORT_MODEL	PORT_MODEL	端口电气特性	端口电气特性名	VARCHAR2(40)	M
+RME_PORT_MODEL	PORT_TYPE_ID	端口光电类型ID	端口光电类型ID，引用，RME_PORT_TYPE表字段PORT_TYPE_ID	NUMBER(8)	M
+5.1.18　工程
+主表：PUB_PROJECT
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_PROJECT	PROJECT_ID	工程ID	关键字ID，，该ID系统自动维护	NUMBER(8)	M
+PUB_PROJECT	PROJECT_NO	工程编码	工程的编码，在资源管理系统中的唯一编码	VARCHAR2(255)	M
+PUB_PROJECT	PROJ_NAME	工程名称	工程中文名称，在资源管理系统中的唯一名称	VARCHAR2(255)	M
+PUB_PROJECT	PROJ_PROP_ID	工程性质	字典取值：
+30104   改造
+30105   新建
+30106   扩容
+30107   搬迁
+30108   其它
+30110   补录
+30111   代建
+30112   主动规划	NUMBER(8)	M
+PUB_PROJECT	PROJ_TYPE_ID	工程类型	工程类型，引用数据库字典值，取值如下：
+30001  管线工程
+30002  光缆工程
+30003  电缆工程
+30004  传输工程
+30005  管道工程
+30006  机房工程
+30007  交换工程
+30008  接入网工程
+30009  数据网工程
+30010  微波干线工程
+30011  卫星地面站工程	NUMBER(8)	M
+PUB_PROJECT	DESIGN_NUMBER	设计编码	工程的设计编码	VARCHAR2(40)	O
+PUB_PROJECT	CONSTRUCT_UNITS	施工单位	工程施工单位名称	VARCHAR2(255)	O
+PUB_PROJECT	AUTH_UNITS	权属单位	工程权属单位名称	VARCHAR2(255)	O
+PUB_PROJECT	DESIGN_UNITS	设计单位	工程设计单位名称	VARCHAR2(255)	O
+PUB_PROJECT	BUILDING_UNITS	建设单位	工程建设单位名称	VARCHAR2(255)	O
+PUB_PROJECT	START_WORK_DATE	开工日期	工程的开始施工日期，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_PROJECT	FINISH_DATE	竣工日期	工程的竣工日期，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_PROJECT	USED_DATE	投入使用日期	工程的投入使用日期，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_PROJECT	REGION_ID	管理区域	工程所在管理区域
+引用SPC_REGION_REGION_ID	CHAR（24）	M
+PUB_PROJECT	FIRST_ACCEPT_DATE	初验日期	工程初验日期，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_PROJECT	FINAL_ACCEPT_DATE	终验日期	工程终验日期，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_PROJECT	PROJ_DUTY_MAN	工程负责人		VARCHAR2(100)	O
+PUB_PROJECT	PROJ_STATE_ID	工程状态	工程状态引用数据库字典值，取值如下：
+160001  设计
+160002  在建
+160030  规划
+160031  冻结
+160032  测试中
+160033  竣工
+160060  正常	NUMBER(8)	O
+PUB_PROJECT	NOTES	备注	备注信息	VARCHAR2(255)	O
+5.1.19　工程关联资源
+主表：PUB_PROJ_RES  从表：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_PROJ_RES	PPROJ_RES_ID	工程资源关联ID	关键字ID，系统自动维护	NUMBER(16,0)	M
+PUB_PROJ_RES	PROJECT_ID	工程ID	工程ID，引用PUB_PROJECT表字段PROJECT_ID	NUMBER(8,0)	M
+PUB_PROJ_RES	RES_TYPE_ID	资源类型ID	工程关联的资源类型ID	NUMBER(8,0)	M
+PUB_PROJ_RES	RES_ID	资源ID	工程关联的资源对象ID	CHAR(24)	M
+5.1.20　单位
+单位数据存储在1个表中，即：PUB_UNIT。
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_UNIT	UNIT_ID	单位ID	关键字ID，系统自动维护	CHAR(24)	M
+PUB_UNIT	UNIT_NAME	单位名称	单位在资源管理系统中的唯一名称	VARCHAR2(80)	M
+PUB_UNIT	UNIT_KIND_ID	单位类型	单位的类型，取值：
+20001  管理单位
+20002  维护单位
+20003  使用单位
+20004  权属单位
+20005  建设单位
+20006  设计单位
+20007  施工单位
+20008  监理单位
+20009  验收单位
+20010  建设主管单位	NUMBER(8)	M
+PUB_UNIT	LINK_MAN	联系人	单位联系人	VARCHAR2(40)	O
+PUB_UNIT	LINK_TELE	联系电话	单位联系电话	VARCHAR2(40)	O
+5.1.21　客户
+主表：PUB_CUST
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_CUST	CUST_ID	客户ID	关键字ID，系统自动生成	CHAR(24)	M
+PUB_CUST	NO	客户编号	客户编号,根据命名规则生成	VARCHAR2(100)	O
+PUB_CUST	CUST_TYPE_ID	客户类型	枚举值，取值包括：
+90110-公众客户
+90121-集团客户	NUMBER(8)	M
+PUB_CUST	CUST_NAME	客户名称	客户中文名称	VARCHAR2(100)	M
+PUB_CUST	SPELL	客户英文名称	客户英文名称	VARCHAR2(100)	O
+PUB_CUST	REGION_ID	所属管理区域	客户所在区域，引用空间专业管理区域SPC_REGION表字段REGION_ID	CHAR(24)	M
+PUB_CUST	PARENT_ID	父客户ID	父客户，当为集团客户存在父客户时必填，引用客户表 PUB_CUST字段CUST_ID	CHAR(24)	O
+PUB_CUST	LINK_MAN	联系人姓名	集团客户联系人姓名，集客必填，公客客户无需填写	VARCHAR2(20)	MC
+PUB_CUST	DEPT_ID	客户单位	客户单位，联系人的单位。公客客户无需填写	VARCHAR2(100)	O
+PUB_CUST	LINK_TELE	联系电话	联系人电话	VARCHAR2(100)	M
+PUB_CUST	ADDRESS	联系地址	联系地址	VARCHAR2(255)	M
+PUB_CUST	EMAIL	联系EMAIL	联系EMAIL	VARCHAR2(100)	O
+PUB_CUST	GRADE	客户等级	集客必填
+集客取值包括：
+91215	一级
+91216	二级
+91217	三级
+91218	四级
+91219	五级
+91220	六级。
+一级最大，六级最小	number(8)	MC
+PUB_CUST	STATUS	状态	取值：
+0可用
+1不可用	CHAR(1)	M
+PUB_CUST	SVR_LEVEL	服务等级	公客取值：
+10071881-VIP-1
+10071882-VIP-2
+10071883-VIP-3
+集客取值包括：
+3010610钻石
+3010602 金牌
+3010603 银牌
+3010620 标准	NUMBER(8)	O
+PUB_CUST	RESOURCE_FROM	资源来源	取值参见附录A。	NUMBER(8)	O
+PUB_CUST	NAME_AB	中文缩写	客户的中文简称	VARCHAR2(100)	O
+PUB_CUST	ALIAS	客户别名	客户别名	VARCHAR2(100)	O
+PUB_CUST	MANAGER_MAN	客户经理	客户经理，文本填写	VARCHAR2(20)	O
+PUB_CUST	MANAGER_TELE	客户经理电话号码	客户经理电话，文本填写	VARCHAR2(20)	O
+5.1.22　生产厂家
+主表：PUB_MFR，从表：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_MFR	MFR_ID	生产厂家ID	关键字ID，系统自动维护	NUMBER(8)	M
+PUB_MFR	MFR_MARKER	厂家简称	生产厂家的英文简称	VARCHAR2(80)	O
+PUB_MFR	MFR	厂家名称	生产厂家名称	VARCHAR2(80)	M
+PUB_MFR	NOTES	备注		VARCHAR2(80)	O
+5.1.23　机历卡
+主表：PUB_MACH_CARD，从表：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_MACH_CARD	CARD_ID	机历卡ID	关键字ID，系统自动维护	CHAR(24)	M
+PUB_MACH_CARD	CARD_NO	机历卡编码	机历卡编码	CHAR(24)	M
+PUB_MACH_CARD	RES_ID	资源编码	机历卡对应的资源ID	CHAR(24)	M
+PUB_MACH_CARD	RES_TYPE_ID	资源类型	机历卡对应的资源的资源规格ID，引用资源规格表PUB_RES_TYPE.RES_TYPE_ID	NUMBER(8)	M
+PUB_MACH_CARD	RES_NAME	资源名称	机历卡对应的资源在资源管理系统中的唯一名称 	VARCHAR2(255)	M
+PUB_MACH_CARD	USED_DATE	首次装机时间	首次装机时间，格式：YYYY-MM-DD hh:mm:ss	DATE	M
+PUB_MACH_CARD	EQUIP_NAME	对应设备名称	机历卡的对应资源所属设备的设备名称	VARCHAR2(100)	O
+PUB_MACH_CARD	EQUIP_TYPE	对应设备类型	机历卡的对应资源所属设备的设备类型	VARCHAR2(80)	O
+PUB_MACH_CARD	SPECIALITY_ID	专业类型	所属专业，引用SPC_SPECIALITY. SPECIALITY_ID	NUMBER(8)	M
+PUB_MACH_CARD	CHECK_DATE	验收时间	验收时间，格式：YYYY-MM-DD hh:mm:ss	DATE	O
+PUB_MACH_CARD	CHARGE_MAN	施工责任人	　	VARCHAR2(20)	M
+PUB_MACH_CARD	NOTES	备注	备注说明	VARCHAR2(255)	M
+5.1.24　机历卡内容
+主表：PUB_MACH_CONTENT，从表：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_MACH_CONTENT	CONTENT_ID	卡内容ID	系统关键字ID	CHAR(24)	M
+PUB_MACH_CONTENT	CARD_ID	机历卡编码	对应机历卡ID	CHAR(24)	M
+PUB_MACH_CONTENT	SERIAL_NO	序号	操作记录序号	NUMBER(4)	M
+PUB_MACH_CONTENT	CONTENT_DESCRIBE	内容标题	内容标题，对变更内容做简要的标题性说明	VARCHAR2(255)	M
+PUB_MACH_CONTENT	LAST_LENGTH	历时时长	该变更历时时长，填写时需给出单位，小时或分钟。	VARCHAR2(20)	M
+PUB_MACH_CONTENT	PROCESS_RESULT	处理结果	　	VARCHAR2(255)	M
+PUB_MACH_CONTENT	ORDER_CODE	单据编码	操作对应的工单编码，如有请填写	VARCHAR2(100)	O
+PUB_MACH_CONTENT	INTERN_IP	内部IP	处理时使用的内部IP，如有请填写	VARCHAR2(15)	O
+PUB_MACH_CONTENT	EXTERN_IP	外部IP	处理时使用的外部IP，如有请填写	VARCHAR2(15)	O
+PUB_MACH_CONTENT	SOFT_VERSION	软硬件版本	设备类资源的软硬件版本号	VARCHAR2(10)	O
+PUB_MACH_CONTENT	CHANGE_TIME	变更时间	该变更结束的时间，格式：YYYY-MM-DD hh:mm:ss	DATE	M
+PUB_MACH_CONTENT	CHANGE_TYPE_ID	变更类型	取值包括：
+70001 设备调整
+70002 版本升级
+70003 重大故障维修
+70004 其它变更
+70005 开局信息
+70006 软件变更
+70007 硬件变更
+70008 网络组织变更
+70009 故障	NUMBER(8)	M
+PUB_MACH_CONTENT	DETAIL	变更内容	变更内容详情描述	VARCHAR2(255)	M
+PUB_MACH_CONTENT	CONTACT_WAY	联系方式	该变更处理人的联系方式 	VARCHAR2(30)	O
+PUB_MACH_CONTENT	INPUT_TIME	输入时间	该机历卡内容的记录时间，格式：YYYY-MM-DD hh:mm:ss	DATE	M
+5.1.25　员工
+主表:STAFF   从表:无     关联：无
+表名	英文名称	属性名称	说明	数据类型	限定
+STAFF   	STAFF_ID	员工ID	关键字ID	NUMBER(8)	M
+STAFF   	NAME	姓名	员工姓名	VARCHAR2(20)	M
+STAFF   	PHONE_NO	电话	员工电话	VARCHAR2(24)	M
+STAFF   	IDENTITY_ID	身份证号	员工身份证号	CHAR(18)	O
+STAFF   	EMAIL	电子邮件地址	电子邮件地址	VARCHAR2(80)	O
+STAFF   	STATE	帐号状态	帐号状态：
+K0A：有效（使用中）
+K04：已停用（停用日期已过）
+K0H：已归档	CHAR(3)	M
+STAFF   	LOGIN_NAME	账号登录名	账号登录名	VARCHAR2(20)	M
+STAFF   	PASSWORD	账号密码	账号密码	VARCHAR2(64)	M
+STAFF   	EFF_DATE	账号开始使用日期	账号开始使用日期	DATE	O
+STAFF   	EXP_DATE	帐号有效期	帐号有效期	DATE	M
+5.1.26　资产目录
+主表: PUB_FIXED_ASSETS_CATALOG   从表:无     关联：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_FIXED_ASSETS_CATALOG	CATALOG_ID	资产目录ID	资产目录关键字ID	NUMBER(8,0)	M
+PUB_FIXED_ASSETS_CATALOG	CATALOG_NO	目录编码	目录编码	NUMBER(8,0)	M
+PUB_FIXED_ASSETS_CATALOG	CATALOG_NAME	目录名称	目录名称	VARCHAR2(80)	M
+PUB_FIXED_ASSETS_CATALOG	PARENT_ID	所属父对象	所属父对象ID	NUMBER(8,0)	M
+PUB_FIXED_ASSETS_CATALOG	CLASS_ID	种类	枚举值取值：
+1690001	 类
+1690002	 项
+1690003	 目
+1690004	 节
+1690005	 元	NUMBER(8,0)	M
+PUB_FIXED_ASSETS_CATALOG	ASSEMBLE_NAME	拼装名称	各级名称拼装后的名称	VARCHAR2(255)	M
+PUB_FIXED_ASSETS_CATALOG	ASSEMBLE_NO	拼装编号	各级名称拼装后的编号	VARCHAR2(255)	M
+5.1.27　固定资产
+主表: PUB_FIXED_ASSETS   从表:无     关联：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_FIXED_ASSETS	ASSETS_ID	资产ID	资产ID，系统关键字	VARCHAR2(24)	M
+PUB_FIXED_ASSETS	ASSET_PROPERTY_NO	资产标签号	资产标签号	VARCHAR2(40)	M
+PUB_FIXED_ASSETS	ASSETS_NO	资产编号	资产编号	VARCHAR2(80)	M
+PUB_FIXED_ASSETS	ASSETS_NAME	资产名称	资产名称	VARCHAR2(80)	M
+PUB_FIXED_ASSETS	CATALOG_ID	目录编号	目录编号	NUMBER(8)	M
+PUB_FIXED_ASSETS	MFR_ID	厂商	厂商，引用PUB_MFR表字段MFR_ID	NUMBER(8)	M
+PUB_FIXED_ASSETS	MODEL	资产型号	资产型号	VARCHAR2(80)	M
+PUB_FIXED_ASSETS	NUM	资产数量	资产数量	NUMBER(8)	M
+PUB_FIXED_ASSETS	UNIT	单位	资产资源的计量单位	VARCHAR2(40)	M
+PUB_FIXED_ASSETS	START_USE_DATE	资产启用日期	格式：YYYY-MM-DD hh:mm:ss	DATE	M
+PUB_FIXED_ASSETS	USE_YEAR	使用年限	使用年限	NUMBER(8)	M
+PUB_FIXED_ASSETS	ASSET_COST	资产成本	资产成本，包括单位和数量	NUMBER(12,2)	M
+PUB_FIXED_ASSETS	PROP_CHAR_ID	产权性质	取值参见附录A。	NUMBER(8)	M
+PUB_FIXED_ASSETS	MANAGER	产权人	产权人：为共建共享设施时填写中国电信，中国联通、中国移动及其组合，否则填写联通具体单位，政府、电力	VARCHAR2(80)	M
+PUB_FIXED_ASSETS	DUTY_PERSON	责任人	负责资产的人员	NUMBER(8)	M
+PUB_FIXED_ASSETS	ALTER_REASON	下电、闲置待报废的原因	下电、闲置待报废的原因	VARCHAR2(200)	M
+PUB_FIXED_ASSETS	SCRAPPED	能否再利用	能否再利用，取值：
+0 不能
+1 能	CHAR(1)	M
+PUB_FIXED_ASSETS	VALUE	资产净值	资产净值，包括单位和数量	NUMBER(12,2)	M
+PUB_FIXED_ASSETS	PROPERTY	产权归属	取值参见附录A产权归属	NUMBER(8)	M
+PUB_FIXED_ASSETS	RESOUCE_FROM	资源来源	资源来源：工程转入、零星购置	VARCHAR2(80)	M
+PUB_FIXED_ASSETS	ADDRESS	所在地点	固定资产资源所在地点	VARCHAR2(80)	M
+5.1.28　资源资产关系
+主表: PUB_RES_UNION   从表:无     关联：无
+表名	英文名称	属性名称	说明	数据类型	限定
+PUB_RES_UNION	A_RES_ID	A资源ID	资源ID	VARCHAR2(24)	M
+PUB_RES_UNION	A_RES_TYPE_ID	A资源类型	资源类型ID	NUMBER(8,0)	M
+PUB_RES_UNION	Z_RES_ID	资产资源ID	资产ID	VARCHAR2(24)	M
+PUB_RES_UNION	Z_RES_TYPE_ID	资产资源类型ID	资产资源类型ID	NUMBER(8,0)	M
+附　录　A
+（规范性附录）
+枚举值说明
+A.1　专业
+专业	采用数据字典值：
+10	公共资源
+20	空间资源
+30	机房设备
+40	管线
+41	管道
+42	杆路
+43	光缆网
+44	电缆网
+50	传输
+60	同步网
+70	数据
+74	IP网
+78	基础数据网
+79	IDC
+86	IP承载网
+90	接入网
+100	交换
+107	IMS
+120	动力
+130	备品备件
+180	码号管理
+230	移动网
+310	智能网
+330	软交换
+422	卫星网
+423	业务平台
+447	增值业务系统
+A.2　长本属性
+长本属性	采用数据字典值：
+79650001 长途
+79650002 本地
+79650003 混用
+A.3　产权性质
+产权性质	引用数据库字典值:
+40001 自建自用
+40002 购买
+40003 租用
+40004 借用
+40005 合建
+40039 空闲 
+40040 出租
+40041 共建共享
+40029 其他 
+A.4　产权归属
+产权归属	取值包括：
+50045 民间投资
+67590031 电信
+67590032 联通
+67590033 移动
+67590034 其他产权
+67590035 铁塔
+67590036 信网
+67590037 中国有线
+67590038 客户
+A.5　资源来源
+资源来源	取值包括：
+20011	  电信公司
+20020	  中国移动
+20021	  中国广电
+20022	  中国铁塔
+20026	  歌华有线
+A.6　维护状态
+维护状态	取值包括：
+160001 设计	
+160002 在建		
+160004 可用	
+160005 故障	
+160060 正常
+170029 割接封锁
+170046  测试
+160003 废弃
+
+A.7　业务状态
+业务状态	取值包括：
+170001 空闲 
+170002 预占
+170003 占用
+170005 预释放
+170007 预留
+170014 预选
+170015 备用
+160014 停用
+160065 闲置  
+170147  损坏     
+170046   测试
+170187 临时占用
+说明：设备入网后空闲状态，设备退网后的闲置状态；临时占用表示故障后临时倒换占用。
+A.8　资源生命周期
+资源生命周期	资源生命周期取值：
+10030300 设计状态
+10030301 工程建设期（入网带业务前）
+10030302 工程可用期（已入网带业务）
+10030303 工程初验后试运行
+10030304 工程终验后在网
+10030305 退网状态 
+A.9　设计用途
+设计用途	设计用途,采用数据字典值:
+11111111 自用 
+11111112 出租 
+11111113 共享 
+A.10　业务用途
+业务用途	业务用途,采用数据字典值:
+3101000	时钟
+3101001	数据
+3101002	网管监控
+3101003	未知
+3101004	信令
+3101005	语音
+A.11　电路级别
+电路级别	电路级别取值：
+10070603   国际
+10070623   省际一级
+10070619   省际二级
+10070618   省内二级
+10070621   本地网区县间   
+10070622   本地网区县内   	说明
+1、国际：含港澳台；
+2、省际一级（电路两端为省会城市，如南京—济南、北京---济南间）；
+3、省际二级（电路两端至少有一个不是省会城市 如：济南---苏州 、北京-大连）；
+4、省内二级（电路两端为省内城市的，如济南---青岛、苏州---徐州）；
+5、本地网区县间：电路两端为本地网跨区、县；
+6、本地网区县内：电路两端为本地网区、县内。
+A.12　电路速率
+电路速率	取值包括：
+10070165	0K
+10070186	4.8K
+10070161	2.4K
+10070248	5K
+10070200	8K
+10070131	9.6K
+10070225	14.4K
+10070197	16K
+10073169	18K
+10070199	28K
+10070128	32K
+10070132	38.4K
+10070129	48K
+10070130	56K
+70241931	64K
+10070171	112K
+10070174	144K
+10070151	200K
+10070116	256K
+10073002	320K
+10070208	352K
+10070113	384K
+10070243	386K
+10070133	400K
+10070522	448K
+10073004	512K
+10070247	576K
+10070249	600K
+10070134	640K
+10070391	704K
+10070135	712K
+10070190	748K
+10070117	768K
+10070137	796K
+10070193	800K
+10070523	832K
+10070254	896K
+10070210	960K
+10070170	1024K
+10070220	1168K
+10073615	1280K
+10070124	1600K
+10070227	1728K
+10070126	1920K
+10070127	1984K
+10070138	2000K
+10070233	2048K
+10070234	2320K
+10070139	2500K
+10070141	2526K
+10070152	2560K
+10070142	3072K
+10070143	4000K
+10070244	4096K
+10070144	5120K
+10070145	6000K
+10070146	6096K
+10070147	6656K
+10070148	8128K
+10073000	6400K
+10073005	1M
+10070101	2M
+10073058	3M
+10070119	4M
+10070163	5M
+10070120	6M
+10070252	7M
+10070105	8M
+10073061	9M
+10070173	13M
+10070162	15M
+10070228	17M
+10070209	22M
+10070180	25M
+10070238	28M
+10070239	29M
+10070157	30M
+10070240	32M
+10070102	34M
+10070242	36M
+10070260	38M
+10073006	40M
+10070159	42M
+10070245	43M
+10070279	44M
+10070103	45M
+10070526	46M
+10070188	48M
+10070158	50M
+10070207	52M
+10070261	54M
+10070280	56M
+10070262	58M
+10070250	60M
+10070154	64M
+10070264	66M
+10073054	68M
+10070265	70M
+10070267	74M
+10070268	76M
+10070269	78M
+10070273	86M
+10070277	96M
+10070255	90M
+10070256	10/100M
+10070257	100/1000M
+10070349	110M
+10070350	120M
+10070352	150M
+10071095	160M
+10070296	170M
+10073073	190M
+10070104	155M
+10070514	208M
+10070515	225M
+10070516	232M
+10071015	240M
+10073071	250M
+10070517	296M
+10070182	300M
+10073055	310M
+10070518	320M
+10073092	350M
+10070519	380M
+10070294	400M
+10070520	410M
+10070521	440M
+10073007	450M
+10070259	500M
+10070300	550M
+10070298	600M
+10073056	620M
+10070109	622M
+10073057	775M
+10070194	800M
+10071004	900M
+10073060	1250M
+10070223	1300M
+10070253	8060M
+10070217	10000M
+10070218	10100M
+10070219	10900M
+10070221	11912M
+10070226	14600M
+10070246	48050M
+10070241	338000M
+10070251	724728M
+10070282	1.25G
+10070181	2G
+10070178	2.5G
+10070172	12.8G
+10070222	12.8G
+10070183	32G
+99999147	40G
+10070187	48G
+10073617	200G
+
+A.13　传输电路业务类型
+注意：不同电路级别、网络类型下的传输电路业务类型不同
+相关说明：详见《中国联通OSS网络资源命名规范》
+电路级别	网络类型	业务类型
+10070603 国际
+10070623 省际一级
+10070619 省际二级	　	10080843  ATM网电路
+		10080844  CNGI联网电路
+		10080845  CHINA169网IP电路
+		10080846  DDN电路
+		10080847  DXC网冗余电路
+		10080848  DXC网中继电路
+		10080849  IDC联网电路
+		10080850  PCM电路
+		10080851  保护通道电路
+		10080852  骨干交换网电路
+		10080853  骨干交换网信令电路
+		10080854  党政专网视频会议主用电路
+		10080855  党政专网视频会议备用电路
+		10080856  党政专网（主用）电路
+		10080857  党政专网（备用）电路
+		10080858  分组电路
+		10080859  际中、际专电路
+		10080860  临时电路
+		10080861  七号信令CLA电路
+		10080862  七号信令CLB电路
+		10080863  七号信令CLD电路
+		10080864  全程均为区间路由的省际电路
+		10080865  IP承载A网电路
+		10080866  视频(主用)电路
+		10080867  视频(备用)电路
+		10080868  视频骨干传输网电路
+		10080869  同步链路电路群（带业务）
+		10080870  同步链路电路群（专用）
+		10080871  图像传送通道
+		10080872  网管电路
+		10080873  出租长途电路
+		10080874  以太网专线通道
+		10080875  帧中继网电路
+		10080876  综合业务电路
+		10080877  移动网长途电路
+		10080878  WCDMA网中继电路
+		10080879  互联网电子商务长途电路
+		10080880  移动网信令电路
+		10080881  计费电路
+		171669    IP承载B网电路
+10070618 省内二级
+10070621 本地网区县间
+10070622 本地网区县内	7002008 NGN	171670	至SS电路
+	7002008 NGN	171671  七号信令准直联CLA电路
+	7002008 NGN	171672  至AG电路
+	7002008 NGN	171673  至TG电路
+	10071292 党政专网	171674  计算机联网电路
+	10071292 党政专网	171675  IP互联网电路
+	10071292 党政专网	171676  七号信令电路(不含信令)
+	10071292 党政专网	10080850  PCM电路
+	10071292 党政专网	171692  随路信令电路
+	10071292 党政专网	10080856  党政专网（主用）电路
+	10071292 党政专网	10080857  党政专网（备用）电路
+	10071292 党政专网	171678  七号信令电路(含信令)
+	10070404 交换网	171679  公话业务
+	10070404 交换网	171680  至NGN交换电路
+	10070404 交换网	10071505  长途交换电路
+	10070404 交换网	171681   至关口局电路
+	10070404 交换网	171682  关口局至其它运营商
+	10070404 交换网	171683         模块局间互联中继
+	10070404 交换网	171684          至小灵通交换机电路
+	10070404 交换网	171685          至移动网交换机电路
+	10070404 交换网	171686          至汇接局电路
+	10070404 交换网	171687          智能网电路
+	10070404 交换网	171601         际中、际专电路群
+	10070404 交换网	171618        ISDN专用电路
+	10070404 交换网	171688        交互式电话会议
+	10070404 交换网	171689          本地智能平台
+	10070404 交换网	171690          灵通秘书
+	10070404 交换网	171691          30B+D电路
+	10070404 交换网	171692          随路信令电路
+	10070404 交换网	171693          远端交换模块设备电路
+	10070404 交换网	171694          悦铃业务
+	10070404 交换网	171695          语音信箱
+	10070404 交换网	171696          网间监测
+	10070404 交换网	10071572       计费联网电路
+	10070404 交换网	10071625        增值业务
+	10070404 交换网	171697          准直联信令网DXC至DXC
+	10070404 交换网	171698          DXC至信令转接点STP的电路
+	10070404 交换网	171699          炫铃
+	10070404 交换网	171700       七号信令准直联CLA电路
+	10070404 交换网	171676       七号信令电路(不含信令)
+	10070404 交换网	171701       五号信令电路
+	10070404 交换网	171702        电话伴侣业务
+	10070404 交换网	171678      七号信令电路(含信令)
+	10070404 交换网	171703       七号信令准直联CLB电路
+	10070404 交换网	171704        七号信令准直联CLC电路
+	10070404 交换网	171705          省客服电路
+	10070404 交换网	171706          114省集中平台
+	10070404 交换网	171707          七号信令准直联CLD电路
+	10070498 其他	171708          家庭宽带多媒体
+	10070498 其他	171709          交换告警联网电路
+	10070498 其他	171710          奥运专用电路
+	10070498 其他	171711          奥运专用电路(备用)
+	10070498 其他	171629          备用电路
+	10070498 其他	171712         测试或试验电路
+	10070498 其他	171713          车载台专用联网电路
+	10070498 其他	171714          ASON关联业务
+	10070498 其他	171715          ASON金级业务
+	10070498 其他	171716          临时电路
+	10070498 其他	171661          MSTP网
+	10070498 其他	171717          网管网电路
+	10070498 其他	171718          SDH传输网管联网电路
+	10070498 其他	171719          PDH传输网管联网电路
+	10070498 其他	171720          大客户网管联网电路
+	10070498 其他	10071493        DCN联网电路
+	10070498 其他	171721           TPE系统公免电路
+	10070498 其他	171722          九七网专用电路
+	10070498 其他	10080850        PCM电路
+	10070498 其他	171723         200号业务电路
+	10070498 其他	171654          特服电路
+	10070498 其他	171724          电视电话会议
+	10070498 其他	171725         图象传送通道
+	10070498 其他	171726         电视电话会议（主用）
+	10070498 其他	171727         电视电话会议（备用）
+	10070498 其他	171728         公众会议电视电路
+	10070498 其他	171729         电话信息联网电路
+	10070498 其他	171730         国际电路省内延伸段
+	10070498 其他	171731         中超联赛业务
+	10070498 其他	171732         中超联赛业务(备用)
+	10070498 其他	171733         网通116综合声讯平台（公免）
+	10070498 其他	171734         接入网网管联网电路
+	10070498 其他	171735         交换（含无线市话）网管或终端联网电路
+	10070498 其他	171736         同步时钟网（专用）
+	10070498 其他	171737         其他
+	10070498 其他	171738         固网短信联网电路
+	10070498 其他	171739         呼叫中心
+	10070498 其他	171768         计费联网电路
+	10070498 其他	10071625       增值业务
+	10070403 数据网	171740         MPLS-VPN组网
+	10070403 数据网	171741         IP承载网络
+	10070403 数据网	10230004       ATM电路
+	10070403 数据网	171742         非出租、非联网宽带电路
+	10070403 数据网	171743         宽带伴侣
+	10070403 数据网	171744         电子商务
+	10070403 数据网	10080846       DDN电路
+	10070403 数据网	171745         帧中继网电路
+	10070403 数据网	171635         IDC联网电路
+	10070403 数据网	171675         IP互联网电路
+	10070403 数据网	171746         窄带拨号缩网
+	10070403 数据网	171747         IP承载B网
+	10070403 数据网	171641         IP电话联网电路
+	10070403 数据网	171674         计算机联网电路
+	10070403 数据网	171748         163，169联网
+	10070403 数据网	10080858       分组电路
+	10070403 数据网	171749         IPTV
+	10070403 数据网	171768         计费联网电路
+	10070403 数据网	171750         朗讯ATM中继
+	10070403 数据网	171751         承载VOIP业务电路
+	10070497 网络监控	171752         电源监控联网（带业务）
+	10070497 网络监控	171753         环境监控电路
+	10070497 网络监控	171754         移动分组网监控系统
+	10070497 网络监控	171696         网间监测
+	10070495 网元出租	171755         GSM电路
+	10070495 网元出租	171618         ISDN专用电路
+	10070495 网元出租	10071625       增值业务
+	10070495 网元出租	171756         30B+D电路
+	10070495 网元出租	171757         捆绑业务-1
+	10070495 网元出租	171758         捆绑业务-2
+	10070495 网元出租	171759         捆绑业务-3
+	10070495 网元出租	171760         捆绑业务-4
+	10070495 网元出租	171761         捆绑业务-5
+	10070495 网元出租	171762         数字专线出租电路
+	10070495 网元出租	171763         以太网专线出租电路
+	10070495 网元出租	171764         信息台中继电路
+	10070495 网元出租	171675         IP互联网电路
+	10070495 网元出租	171765         国际电路省内延伸段
+	10070495 网元出租	171766         备用电路
+	10070495 网元出租	171767         MPLS-VPN组网
+	10070495 网元出租	10080121       帧中继（非ATM）
+	10070495 网元出租	10080846       DDN电路
+	10070495 网元出租	171724         电视电话会议
+	10070495 网元出租	10230004       ATM电路
+	10070495 网元出租	171678         七号信令电路（含信令）
+	10070495 网元出租	171768         计费联网电路
+	10070495 网元出租	171769         DID数字中继电路
+	10070495 网元出租	171770         电子商务
+	10070495 网元出租	171771         移动基站电路
+	10021602 无线市话网	171772         灵通无绳
+	10021602 无线市话网	171773         至汇接局电路
+	10021602 无线市话网	171676         七号信令电路（不含信令）
+	10021602 无线市话网	171671         七号信令准直联CLA电路
+	10021602 无线市话网	171774         C-MODE
+	10021602 无线市话网	171699         炫铃
+	10021602 无线市话网	171681         至关口局电路
+	10021602 无线市话网	171775         秘书台电路
+	10021602 无线市话网	171776         PHS分组数据业务
+	10021602 无线市话网	171777         PIAFS
+	10021602 无线市话网	171778         小灵通局间中继
+	10021602 无线市话网	171779         小灵通RAIU中继
+	10021602 无线市话网	171780         小灵通信令电路
+	10021602 无线市话网	171781         预付费业务
+	10021602 无线市话网	171782         无线漫游
+	10021602 无线市话网	171783         UT路由器
+	10021602 无线市话网	171784         短消息业务
+	10021602 无线市话网	171678         七号信令电路（含信令）
+	10021602 无线市话网	171785         基站维修测试
+	10021602 无线市话网	171786         至无线基站电路
+	10070496 移动网	171787         Femto
+	10070496 移动网	171705         省客服电路
+	10070496 移动网	171704         七号信令准直联CLC电路
+	10070496 移动网	171703         七号信令准直联CLB电路
+	10070496 移动网	171788         七号信令
+	10070496 移动网	171789         短消息业务
+	10070496 移动网	171678         七号信令电路（含信令）
+	10070496 移动网	171790         至无线基站电路
+	10070496 移动网	171791         CDMA联网
+	10070496 移动网	171671         七号信令准直联CLA电路
+	10070496 移动网	171699         炫铃
+	10070496 移动网	171792         3G网移动电路
+	10070496 移动网	171793         移动数据电路
+	10070496 移动网	171794         室内分布系统
+	10070496 移动网	171795         GPRS中继
+	10070496 移动网	171796         移动网优电路
+	10070496 移动网	171797         语音中继
+	10070496 移动网	171681         至关口局电路
+	10070496 移动网	171798         2G移动电路
+	10070496 移动网	171799         TD-SCDMA
+	10070496 移动网	171696         网间监测
+	10070496 移动网	171800         七号信令监测电路
+	10070496 移动网	171801         至HLR电路
+	10070496 移动网	171802         至MGW电路
+	10070496 移动网	171707         七号信令准直联CLD电路
+
+A.14　系统类型
+系统类型：
+动环系统的系统类型	取值包括：
+35010001	高压变配电系统
+35010002	低压配电系统
+35010003	油机发电机组系统
+35010004	直流供电系统
+35010005	交流不间断电源系统
+35010006	中央空调系统
+35010007	专用空调系统
+35010008	动力监控系统
+35010009	防雷接地系统
+35010010	灭火系统
+A.15　所属网络
+所属网络：	取值包括：
+79653002 基础数据网
+79653003 DCN网
+79653004 IDC
+79653044 UTN
+79653024 CHINA169
+79653039 党政专网
+79653040固网专用本地承载网
+79653041移动业务本地承载网	
+79653042移动网管本地承载网
+79653022 IP承载A网
+79653023 IP承载B网
+79653045城域网
+网通控股网(待申请ID)
+
+A.16　运行状态
+运行状态：	取值包括：
+35520100	现网运行状态
+35520101	新增网元工程状态
+35520102	搬迁工程状态
+35520103	替换工程状态
+35520104	维护工程状态
+35520105	退服状态
+35520106	搬迁退服状态
+35520107	替换退服状态
+35520108	暂时关闭状态
+A.17　维护方式
+维护方式：	取值包括：
+10530102 代维
+10530104 自维
+当设备由联通维护时，选择自维；当由非联通且知道具体的维护单位时，选择代维
+A.18　运营商
+运营商	取值包括：
+20151224143	Ooredoo Q.S.C.
+20151224144	ORIENT NETWORKS (HK) LIMITED
+20151224145	OSINet Communication Pte. Ltd.
+20151224146	OTE Global
+20151224147	Pacnet
+20151224148	Pan Telecom Limited
+20151224149	PCC-HK NETWORK
+20151224150	PCCW
+20151224151	Philippine Long Distance Telecom Company
+20151224152	QWEST
+20151224153	Reach Network Hong Kong
+20151224154	Rostelecom
+20151224155	ROSTELECOM(RT)
+20151224156	Samsung Networks
+20151224157	SAVVIS
+20151224158	Singpore Telecommunication
+20151224159	SK Telink
+20151224160	SmarTone Mobile Communications Limited
+20151224161	South China Telecom
+20151224162	Sprint
+20151224163	Starhub Ltd.
+20151224164	SUNDAY o/b Mandarin Com.
+20151224166	TDC
+20151224167	Tele2 Telecommunication GmbH
+20151224168	Telenor
+20151224169	TELEGLOBE
+20151224170	Telestra
+20151224171	TeliaSonera
+20151224173	TFN
+20151224175	TPG Internet Pty Ltd
+20151224176	TTK
+20151224177	TTN
+20151224178	TW
+20151224179	Verizon
+20151224181	VietnamTelecomInternational
+20151224182	Viettel Corporation
+20151224183	Virtela
+20151224184	VNPT Global  HK Ltd
+20151224185	VNPT Global USA LLC
+20151224187	VP Telecom (EVN TELECOM)
+20151224188	WebSatMedia Pte Ltd
+20151224189	Wharf T&T
+20151224190	XO
+20151224191	Yahoo
+20151224192	Yanion Company Limited
+20151224193	爱克斯国际电讯
+20151224194	奥地利电信
+20151224195	奥地利电信（欧元）
+20151224196	北京电信通电信工程有限公司
+20151224197	比利时电信
+20151224198	不确定(待核查)：表示该运营商还需要进一步核实确认
+20151224199	朝鲜递信省通信局
+20151224200	德电香港
+20151224201	俄罗斯铁通(TTC)
+20151224202	刚中电信有限责任公司
+20151224203	国际其他
+20151224204	哈萨克斯坦电信
+20151224205	加拿大电信
+20151224206	领华企业有限公司
+20151224207	马来西亚电信
+20151224208	美国Teleglobe
+20151224209	蒙古铁通
+20151224211	斯托克顿
+20151224212	思科系统(香港)
+20151224213	台湾Sealand
+20151224214	台湾东森
+20151224215	台湾固网(香港)股份有限公司
+20151224216	台湾固网股份有限公司
+20151224217	台湾中华电信国际电信分公司
+20151224218	乌克兰电信
+20151224219	西班牙电信国际集团
+20151224220	新加坡与欧分结算成本账户
+20151224221	新世纪资通
+20151224222	亚太电信
+20151224120	KDDI Corporation
+20151224121	Koide
+20151224122	Korea Telecom Corporation
+20151224123	KPN
+20151224124	KVH
+20151224125	KZT
+20151224126	LambdaNet Communications Deutschland AG
+20151224127	LG DACOM Corporation
+20151224128	LG Uplus Corp
+20151224129	LLC EDN Sovintel
+20151224130	M800 Limited
+20151224131	MCW
+20151224132	MobiCom Corporation
+20151224133	Mongolia Telecom
+20151224134	Multinet Pakistan (Private) Limited
+20151224135	Myanma Posts and Telecommunications
+20151224137	NCIC
+20151224138	Nippon Express (H.K.) Co.
+20151224139	NTT Asia
+20151224140	NTT Europe Limited
+20151224141	NWT
+20151224142	OJSC VIMPELCOM
+20151224223	亚洲网通
+20151224224	中国电信（香港）国际有限公司
+20151224056	FPT International Telecom Co., Ltd
+20151224083	IP Converge Data Services, Inc
+20151224089	Bayan Telecommunications, Inc.
+20151224108	Innove Communications, Inc.
+20151224119	JasTel Network Co.,Ltd.
+20151224174	TM Global, Malaysia Berhad
+20151224186	Vocom International Telecommunications Inc.
+20151224023	Cable & Wireless Worldwide (Signapore) PTE Ltd.
+20151224032	China Broadband Communications(Hong Kong)Co.Limited
+20151224033	China Enterprise Netcom Corporation Limited
+20151224042	Commercial Center Railcom of Ulaanbaatar Railway
+20151224105	Information Communications Network Limited Liability Company
+20151224165	Taiwan International Gateway Corporation台湾国际缆网通信
+20151224172	TELKOMUNIKASI INDONESIA INTERNATIONAL (HONG KONG) LIMITED
+20151224180	Vietnam Posts and Telecommunications Group
+20151224136	Companhia De Telecommunicacoes De Mtel, Limitada.
+20151224098	GTT Emea Ltd
+20151224100	NAVER Business Platform Corp.
+20151224101	HKT
+20151224102	中国联通（缅甸）运营公司
+20151224103	HT
+20151224104	iBasis
+20151224106	INFORNET
+20151224107	INNOCOM
+20151224109	International Communication Centre D.P.R
+20151224110	Internet Initiative Japan Inc
+20151224111	Interoute
+20151224001	CU
+20151224002	CTC
+20151224003	港分
+20151224004	台分
+20151224005	美分
+20151224006	欧分
+20151224007	日分
+20151224008	新加坡
+20151224009	澳分
+20151224010	Orange
+20151224011	Aicent Inc
+20151224012	British Telecom
+20151224013	APAC Trading (International) Com.
+20151224014	Astec Agencies Limited
+20151224015	AT&T
+20151224016	Bharti
+20151224017	BD Link Communication Ltd.
+20151224018	BlobeCast
+20151224019	British Telecom (HK)
+20151224020	C&W
+20151224021	C2C AsiaPac Pte Ltd
+20151224022	Cable & Wireless
+20151224024	Cable and Wireless Global Pte Ltd
+20151224025	Cable&Wireless UK
+20151224026	Cantor Gaming and Wagering Ltd
+20151224027	CANTV
+20151224028	CAT
+20151224029	CBL（中攘ЬW路股份有限公司）
+20151224030	Celcom
+20151224031	CHIEF
+20151224034	China International Capital Corp (HK)
+20151224035	Hong Kong Broadbank Network Limited
+20151224036	China Virtual(HK)
+20151224037	CHT
+20151224038	Chuan Wei Telecom (HK) Ltd.
+20151224040	CITIC 1616 Holdings Limited
+20151224041	CLPT
+20151224043	CPC NET
+20151224044	CTM
+20151224045	DACOM
+20151224046	Deutsche Telekom AG
+20151224047	DT
+20151224048	DTAG
+20151224049	DVS Networks
+20151224050	Easylink
+20151224051	EBT
+20151224052	Enterprise Network Inc
+20151224053	EQUANT HONG KONG LIMITED
+20151224054	Fiberlink
+20151224055	FLAG
+20151224057	GEMNET LLC
+20151224058	Global Crossing
+20151224059	GlobalConnect
+20151224060	Global Connect
+20151224061	Global Telecom & Technology
+20151224062	Global Telecom&Technology
+20151224063	Hanaro Telecom
+20151224064	HGC
+20151224065	HK
+20151224066	HKBN
+20151224067	HKG
+20151224068	HKNET COMPANY LIMITED
+20151224069	中国电信国际有限公司
+20151224070	中嘉和网股份有限公司
+20151224071	BRODYNT
+20151224072	中国联通（南非）运营公司
+20151224073	Telecom Italia
+20151224074	PJSC MTS
+20151224075	PJSC MegaFon
+20151224076	Megafon
+20151224077	Elisa Videra
+20151224078	Transtelecom JSC
+20151224079	LLC ELCAT
+20151224080	Zen Systems A/S
+20151224081	MekongNet
+20151224082	Donghwa Telecom Co. Limited
+20151224084	NETPLUZ ASIA PTE LTD
+20151224085	China Mobile Hong Kong Company Ltd.
+20151224086	Uzbektelecom JSC
+20151224087	CJSC Babilon-Mobile
+20151224088	Lao Telecommunications Company
+20151224090	Telecom italia
+20151224091	Enter IT
+20151224092	Tata Communications (Hong Kong) Limited
+20151224093	Avelacom Telecom
+20151224094	RETN (Hong Kong) Limited
+20151224095	TNS PLUS LLP
+20151224096	Congo Telecom
+20151224097	Neocomisp Limited.
+20151224112	iPass
+20151224113	IPC NETWORK SERVICES ASIA LTD
+20151224114	IPTel Global Pte Ltd
+20151224115	IXTECH Ltd
+20151224116	Japan NTT
+20151224117	Japan Telecom
+20151224118	Jardine OneSolution (Hong Kong)
+20170120001	ANC
+20170120002	CBL（中華寬帶網路股份有限公司）
+20170120003	CITIC
+20170120004	CITY_TELCOM(HK)
+20170120006	Joint Stock Company Kazakhtelecom
+20170120007	Telekomunikasi Indonesia Int’l  (HK) Ltd.
+20170120009	是方電訊
+20170120010	台湾国际缆网通信
+20170120011	亚太固网宽频(APTG)
+20151224225	BT
+20151224226	CPCNET
+20151224227	CTI
+20151224228	EQ
+20151224229	Equant
+20151224230	ICC
+20151224231	JT
+20151224232	KDDI
+20151224233	KT
+20151224234	MCI
+20151224235	MCI Worldcom
+20151224236	MobiCom
+20151224237	NT&T
+20151224238	NTT
+20151224239	NTT ASIA LTD.
+20151224240	Reach
+20151224241	Singtel
+20151224242	Telefonica
+20151224243	TELSTRA
+20151224244	TM
+20151224245	T-System
+20151224246	Ukrtelecom
+20151224247	Viettel
+20151224249	VTI
+20151224250	WT&T
+20151224251	WTT
+20151224252	集团国际部
+20151224255	CMCC
+20151224256	EVN TELECOM
+
+A.19　接口类型
+接口类型	取值包括：
+2008030001	100/10M以太网
+2008030002	V.35
+2008030003	X.21
+2008030004	100M以太网
+2008030005	STM-1
+2008030006	电口
+2008030007	G.703(120Ω)
+2008030008	G.703(75Ω)
+2008030011	光口
+2008030012	STM-4
+2008030013	以太网电口
+2008030014	RJ45
+2008030015	RJ45(120Ω)
+2008030017	CE1
+2008030019	STM-3
+2008030021	G.703
+2008030022	PCM
+2008030023	V.24
+2008030027	STM-16
+2011083002	E
+2012070701	10M以太网
+2008030028	10GE
+107590003	     GE多模
+2015041601	STM-2
+2015041602	100M/1000M
+2015041603	10M/100M
+2015041604	以太网接口
+2015041611	10GE LAN PHY
+2015041612	10GE WAN PHY
+2015041613	GE以太口
+2015041617	其他
+A.20　电路要求
+电路要求	枚举值取值：
+2008098005 非正常变更
+2013031002 变更
+2013031000 新开
+2013031001 关闭
+2015093003 升速
+2015093004 降速
+2015093005 移机
+2015093006 共享
+2015093007 移机升速
+2015093008 移机降速
+2015093009 其他变更
+2015093010 端口调整,PVC不变
+说明：非正常变更就是指通过后台变更等这种电路变更类型
+
+
+
+A.21　端口速率
+端口类型为电端口或逻辑端口	取值包括：
+3110025	8k
+3110021	9.6K
+3110026	16k
+3110051	32K
+3110000	64K
+3110009	64K-2M
+3110062	1M
+3110053	1.5M
+3110001	2M
+3110031	4M
+3110014	0-8M
+3110016	0-12M
+3110002	8M
+3110032	22M
+3110063	32M
+3110029	40M
+3110003	34M
+3110004	45M
+3110010	64M
+3110017	68M
+58000001 84M
+3110064	98M
+3110070	10M/100M
+3110015	90M-180M
+3110007	622M
+3110068  1000M
+3110018	2.5G
+3110054	40G
+58000006 80G
+3110060	多速率自适应
+3110061	未知
+3110028	其他
+
+端口类型为光端口	取值包括：
+3110130	0
+3110132	0.3K
+3110135	1.2K
+3110141	2.4K
+3110143	4.8K
+3110120	8k
+3110148	9.6K
+3110150	14.4K
+3110152	16K
+3110153	19.2K
+3110158	28K
+3110160	32K
+3110161	33.6K
+3110162	38.4K
+3110167	56K
+3110122	64K
+3110168	112K
+3110169	115.2K
+3110171	144K
+3110174	256K
+3110176	352K
+3110177	384K
+3110178	512K
+3110179	600K
+3110180	640K
+3110181	748K
+3110182	768K
+3110183	800K
+3110184	960K
+3110188	1168K
+3110190	1920K
+3110191	1984K
+3110133	1M
+3110136	1.5M
+3110138	1.6M
+3110118	2M
+3110142	3M
+3110126	4M
+3110144	5M
+3110145	6M
+3110111	8M
+3110149	13M
+3110151	15M
+3110127	22M
+3110154	24M
+3110156	25M
+3110157	26M
+3110159	30M
+3110203	32M
+3110109	34M
+3110125	40M
+3110163	42M
+3110101	45M
+3110164	48M
+3110165	50M
+3110166	52M
+3110199	84M
+3110175	300M
+3110114	68M
+3110205	260M
+3110103	622M
+3110112	800M
+3110106	1G
+3110192	2G
+3110207	4G
+3110129	5G
+3110208	6G
+3110209	8G
+3110193	12.8G
+3110194	32G
+3110055	40G
+3110195	48G
+3110210	80G
+3110212	320G
+3110128	400G
+3110187	GE
+3110189	1250M
+3110196	10GE
+3110123	ISDN BRI（2B+D）144K
+3110124	其他
+3110113	155M/622M
+3110201	多速率自适应
+3110202	未知
+
+
+
+A.22　机房等级机房类型关系说明
+专业	分类1-3	单位	二级定额资源驱动因素解释说明
+	等级	机房类型		
+固网运维生产用机房	A类机房	长途传输机房	个	安装一级、二级干线传输设备的机房
+		长途交换机房 	个	安装用于长途话务疏通的PSTN、NGN设备的机房。
+		长途IP机房	个	安装集团骨干网IP设备的机房。
+		长途数据机房	个	安装集团骨干网数据设备的机房。
+		长途专业综合机房	个	安装有交换、数据、传输等专业长途、集团骨干层设备的机房。
+		本地核心交换机房	个	安装汇接局、关口局设备的机房
+		本地核心数据机房	个	安装本地数据网核心设备的机房。
+		本地核心专业综合机房	个	安装有交换、数据、传输等专业核心设备的机房。
+		城域IP网核心机房	个	安装本地IP城域网核心设备的机房。
+		电力室	个	为A类、B类机房供电的整流器机房。
+		高级、低级信令转接点机房	个	安装高级、低级信令转接点设备的机房。
+		IDC机房	个	提供服务器托管、租用以及相关增值等方面服务的机房。
+	B类机房	本地城域网传输核心、汇聚、边缘层机房	个	安装本地传输核心、汇聚、边缘层设备的机房。
+		本地城域网IP网汇聚层机房	个	安装本地IP城域网汇聚层、业务控制层设备的机房。
+		本地交换端局机房	个	安装用于本地话务疏通的PSTN、NGN端局设备的机房。
+		本地数据端局机房	个	安装有数据专业端局设备的机房。
+		本地专业综合机房	个	安装有交换、数据、传输等专业端局设备的机房。
+	C1类机房	中继机房	个	一干、二干中继机房。
+	C2类机房	固网接入机房（有动环监控）	个	自建、租赁独立房间用来安装小灵通基站、交换模块局、PSTN接入网、DSLAM等接入用户设备的机房。有动力环境监控。
+		固网接入机房（无动环监控）	个	自建、租赁独立房间用来安装小灵通基站、交换模块局、PSTN接入网、DSLAM等接入用户设备的机房。无动力环境监控。
+移网运维生产用机房	A类	移网核心机房	个	指单独的移网核心机房。若与固网合用机房，统计到固网相应类机房中。
+	C2类	普通基站（有空调）	个	　
+	C2类	普通基站（无空调）	个	　
+	C2类	一体化基站	个	　
+
+A.23　光纤光路业务类型
+注意：不同电路级别、网络类型下的光纤光路业务类型不同
+相关说明：详见《中国联通OSS网络资源命名规范》
+电路级别	光纤光路业务类型
+10070623 省际一级
+10070619 省际二级	10080843 ATM网电路
+	10080844 CNGI联网电路
+	10080845 CHINA169网IP电路
+	10080846 DDN电路
+	10080847 DXC网冗余电路
+	10080848 DXC网中继电路
+	10080849 IDC联网电路
+	10080850 PCM电路
+	10080851保护通道电路
+	10080852骨干交换网电路
+	10080853骨干交换网信令电路
+	10080854党政专网视频会议主用电路
+	10080855党政专网视频会议备用电路
+	10080856党政专网（主用）电路
+	10080857党政专网（备用）电路
+	10080858分组电路
+	10080859际中、际专电路
+	10080860 临时电路
+	10080861 七号信令CLA电路
+	10080862 七号信令CLB电路
+	10080863 七号信令CLD电路
+	10080864 全程均为区间路由的省际电路
+	10080865 IP承载A网电路		  
+	10080866视频(主用)电路
+	10080867视频(备用)电路
+	10080868视频骨干传输网电路
+	10080869同步链路电路群（带业务）
+	10080870同步链路电路群（专用）
+	10080871图像传送通道
+	10080872网管电路
+	10080873出租长途电路
+	10080874以太网专线通道
+	10080875帧中继网电路
+	10080876综合业务电路
+	10080877移动网长途电路
+	10080878 WCDMA网中继电路
+	10080879互联网电子商务长途电路
+	10080880移动网信令电路
+	10080881计费电路
+	10080882 IP承载B网电路
+10070618 省内二级
+10070621 本地网区县间
+10070622 本地网区县内	10080883党政办公网
+	10080884电子政务网
+	10080885DDN或帧中继专线
+	10080886网吧
+	10080887 IP专线
+	10080888 VPN专线
+	10080889宽视界专线
+	10080890网视通专线
+	10080891宝视通专线
+	10080892普通用户
+	10080893光猫设备
+	10080894用户租用
+	10080895电信\移动\铁通
+	10080896光纤出租备用光路
+	10080897联通移动基站
+	10080898联通移动室内分布
+	10080899移动网设备互联
+	10080933	无线市话		
+	10080934 视频会议
+	10080902 ATM
+	10080903 DCN
+	10080904 至WLAN
+	10080905 ADSL设备
+	10080906楼宇宽带中继
+	10080907宽带城域网
+	10080908 IP承载网A网
+	10080909 IP承载网B网
+	10080910 EPON
+	10080829 PON
+	10080910 NGN	
+	10080912 软交换接入
+	10080913 接入网设备
+	10080914交换机直连光路
+	10080915长途DWDM传输设备
+	10080916长途ASON传输设备
+	10080917长途SDH传输设备
+	10080918本地DWDM传输设备
+	10080919本地CWDM传输设备
+	10080920本地ASON传输设备
+	10080921本地SDH传输设备
+	10080922本地PDH传输设备
+	10080923本地MSPP
+	10080924 本地SPDH
+	10080925 MSAP设备
+	10080926 MSTP设备
+	10080927 光缆监测		
+	10080928 监控设备
+	10080929 网管联网
+	10080930互联互通
+	10080931局间互联备用光路
+	10080932有线电视
+
